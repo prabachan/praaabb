@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+template<class T> //assigining template
+class room {      //assigning the class
+private:T a;     //private data member
+T b;
+public:
+    room(T x ,T y)  //constructor
+    {
+        a=x;
+        b=y;
+    }
+    T smaller(); //function declaration
+};
+template<class T>
+T room<T>::smaller()  //function definition
+{
+    return (a<b)?a:b;  //returning the value using assignment operator
+}
+
+int main()
+{
+
+//main module
+room<int>r1(3,4); //creating the object with calling the constructor
+cout<<r1.smaller();  // calling the function to return value
+return 0;
+}
+
+
+
+
