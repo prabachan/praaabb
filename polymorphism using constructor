@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+ class base{
+ protected:
+ int l,b;
+ public:
+ base(int x, int y)
+ {
+ l=x;
+ b=y;
+ }
+ int area()
+ {return (l*b);}
+
+ };
+
+ class derv:public base{
+ public:
+ derv(int x , int y):base(x,y)
+ {
+ l=x;
+ b=y;
+ }
+ int area()
+ {
+ return (l*b);
+ }
+ };
+
+ int main()
+ {
+ base b(10,5);
+ derv d(5,6);
+ base *b1;
+ b1=&b;
+b1->area();
+ cout<<"the area of base class is"<<b1->area()<<endl;
+b1=&d;
+b1->area();
+cout<<"the area of derived class is"<<b1->area()<<endl;
+ return 0;
+ }
+
